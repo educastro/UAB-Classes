@@ -1,0 +1,73 @@
+package lab01;
+
+import static org.junit.Assert.*;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class LinearSearchTest {
+	
+	int sizeOfTheArrayOfInputs = 0;
+	int[] arrayOfInputs;
+
+	private Scanner getInputFile() throws FileNotFoundException{
+		String inputAdressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/input100.txt";
+		Scanner inputFile = new Scanner(new FileReader(inputAdressFile));
+		return inputFile;
+	}
+	
+	private Scanner getKeyFile() throws FileNotFoundException{
+		String keyAddressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/keys.txt";
+		Scanner inputKeyFile = new Scanner(new FileReader(keyAddressFile));
+		return inputKeyFile;
+	}
+	
+	
+	private int getHowManyElementsOnTheFile() throws FileNotFoundException{
+		String inputAdressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/input100.txt";
+		Scanner inputFile = new Scanner(new FileReader(inputAdressFile));
+		while(inputFile.hasNextInt()){
+			sizeOfTheArrayOfInputs++;
+			inputFile.nextInt();
+		}
+		inputFile.close();
+		return sizeOfTheArrayOfInputs;
+	}
+	
+	private void populateTheArrayWithAllTheInputsOfTheFile() throws FileNotFoundException{
+		String inputAdressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/input100.txt";
+		Scanner inputFile = new Scanner(new FileReader(inputAdressFile));
+		arrayOfInputs = new int[sizeOfTheArrayOfInputs];
+		for(int iteratorNumber = 0; iteratorNumber < sizeOfTheArrayOfInputs; iteratorNumber++){
+			arrayOfInputs[iteratorNumber] = inputFile.nextInt();
+		}
+	}
+	
+	@Test
+	public void testFirstElementOfTheInputFile() throws FileNotFoundException {
+		assertEquals(1, getInputFile().nextInt());
+	}
+	
+	@Test
+	public void testFirstElementOfTheKeysFile() throws FileNotFoundException{
+		assertEquals(15, getKeyFile().nextInt());
+	}
+	
+	@Test
+	public void testSizeOfTheArrayOfInputs() throws FileNotFoundException{
+		assertEquals(100, getHowManyElementsOnTheFile());
+	}
+	
+	@Test
+	public void testArrayWithAllTheInputsOfTheFile() throws FileNotFoundException{
+		populateTheArrayWithAllTheInputsOfTheFile();
+		System.out.println(arrayOfInputs[5]);
+		
+	}
+	
+}

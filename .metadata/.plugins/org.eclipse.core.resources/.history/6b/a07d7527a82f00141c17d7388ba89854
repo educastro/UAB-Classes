@@ -1,0 +1,18 @@
+package lab01;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class TestSearch {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		String fileAddress = "/Users/educastro/Documents/programming/java/workspace/lab01/src/lab01/input100.txt";
+		Scanner inputFile = new Scanner(new FileReader(fileAddress));
+		System.out.println(inputFile.nextInt());
+		
+		
+
+	}
+
+}

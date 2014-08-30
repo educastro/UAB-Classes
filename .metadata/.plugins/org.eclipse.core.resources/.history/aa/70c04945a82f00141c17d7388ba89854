@@ -1,0 +1,29 @@
+package lab01;
+
+import static org.junit.Assert.*;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class LinearSearchTest {
+
+	private Scanner getInputFile() throws FileNotFoundException{
+		String fileAddress = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/input100.txt";
+		Scanner inputFile = new Scanner(new FileReader(fileAddress));
+		return inputFile;
+	}
+	
+	
+	@Test
+	public void test() throws FileNotFoundException {
+		assertEquals("1", getInputFile().nextInt());
+		
+	}
+	
+
+}
