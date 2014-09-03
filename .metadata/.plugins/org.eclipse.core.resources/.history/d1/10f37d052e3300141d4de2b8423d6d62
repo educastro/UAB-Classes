@@ -1,0 +1,94 @@
+package lab01;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class TestSearch {
+
+	public static void main(String[] args) throws FileNotFoundException {	
+		LinearSearch linearSearch = new LinearSearch();
+		BinarySearch binarySearch = new BinarySearch();
+		
+		String keyAddressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/keys.txt";
+		String inputAddressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/input100.txt";
+		
+		
+		for(int iteratorNumber = 0; iteratorNumber < getQuantityOfElementsOfTheFile(keyAddressFile); iteratorNumber++){
+			if(linearSearch.lookForTheNumber(getArrayOfElements(inputAddressFile), getQuantityOfElementsOfTheFile(inputAddressFile), getArrayOfElements(keyAddressFile)[iteratorNumber])){
+				System.out.println("")
+			}
+		}
+		
+		
+		
+	}
+	
+	private static int getQuantityOfElementsOfTheFile(String fileAddress) throws FileNotFoundException{
+			Scanner inputFile = new Scanner(new FileReader(fileAddress));
+			int quantityOfElementsOfTheFile = 0;
+			
+			while(inputFile.hasNextInt()){
+				quantityOfElementsOfTheFile ++;
+				inputFile.nextInt();
+			}
+			
+			inputFile.close();
+			return quantityOfElementsOfTheFile;
+	}
+	
+	private static int[] make(String fileAddress) throws FileNotFoundException{
+		Scanner inputFile = new Scanner(new FileReader(fileAddress));
+		int quantityOfElementsOfTheFile = getQuantityOfElementsOfTheFile(fileAddress); 
+		int[] arrayOfInputs = new int[quantityOfElementsOfTheFile];
+		for(int iteratorNumber = 0; iteratorNumber < quantityOfElementsOfTheFile; iteratorNumber++){
+			arrayOfInputs[iteratorNumber] = inputFile.nextInt();
+		}
+		return arrayOfInputs;
+	}		
+	
+	private void callALinearSearch(String inputFileAddress, String keyFileAddress) throws FileNotFoundException{
+		LinearSearch linearSearch = new LinearSearch();
+		Scanner inputFile = new Scanner(new FileReader(inputFileAddress));
+		int quantityOfElementsOfTheFile = 0;
+		int iteratorNumber = 0;
+		
+		
+		while(inputFile.hasNextInt()){
+			quantityOfElementsOfTheFile ++;
+			inputFile.nextInt();
+		}
+		
+		int[] arrayOfInputs = new int[quantityOfElementsOfTheFile];
+		for(iteratorNumber = 0; iteratorNumber < quantityOfElementsOfTheFile; iteratorNumber++){
+			arrayOfInputs[iteratorNumber] = inputFile.nextInt();
+		}
+		
+		Scanner keyFile = new Scanner(new FileReader(inputFileAddress));
+		int quantityOfKeysOfTheFile = 0;
+		
+		while(keyFile.hasNextInt()){
+			quantityOfKeysOfTheFile ++;
+			keyFile.nextInt();
+		}
+		
+		int[] arrayOfKeys = new int[quantityOfKeysOfTheFile];
+		for(iteratorNumber = 0; iteratorNumber < quantityOfKeysOfTheFile; iteratorNumber++){
+			arrayOfKeys[iteratorNumber] = keyFile.nextInt();
+		}
+		
+		for(iteratorNumber = 0; iteratorNumber < quantityOfKeysOfTheFile; iteratorNumber++){
+			linearSearch.lookForTheNumber(arrayOfInputs, quantityOfElementsOfTheFile, arrayOfKeys[iteratorNumber])
+		}
+			
+	}
+		
+
+		
+		
+		
+		
+	}
+}
+
+

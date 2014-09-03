@@ -1,0 +1,103 @@
+package lab01;
+
+import static org.junit.Assert.assertEquals;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class TestSearch {
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		long startTime = System.currentTimeMillis();
+		makeABinarySearch();
+		long stopTime = System.currentTimeMillis();
+		long elapsedTime = stopTime - startTime;
+		System.out.println("execution time for linear search: " + elapsedTime);
+		
+		
+	}
+	
+	private static void makeALinearSearch() throws FileNotFoundException{
+		LinearSearch linearSearch = new LinearSearch();
+		String inputAdressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/input10000.txt";
+		Scanner inputFile = new Scanner(new FileReader(inputAdressFile));
+		getHowManyElementsOnTheInputsFile();
+		int[] arrayOfInputs = new int[sizeOfTheArrayOfInputs];
+		for(int iteratorNumber = 0; iteratorNumber < sizeOfTheArrayOfInputs; iteratorNumber++){
+			arrayOfInputs[iteratorNumber] = inputFile.nextInt();
+		}
+	
+		String keyAddressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/keys.txt";
+		Scanner inputKeyFile = new Scanner(new FileReader(keyAddressFile));
+		getHowManyElementsOnTheKeysFile();
+		arrayOfKeys = new int[sizeOfTheArrayOfKeys];
+		for(int iteratorNumber = 0; iteratorNumber < sizeOfTheArrayOfKeys; iteratorNumber++){
+			arrayOfKeys[iteratorNumber] = inputKeyFile.nextInt();
+		}
+		
+		linearSearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[0]);
+		linearSearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[1]);
+		linearSearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[2]);
+		linearSearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[3]);
+		linearSearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[4]);
+		linearSearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[5]);
+		linearSearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[6]);
+		
+	}
+	
+	private static void makeABinarySearch() throws FileNotFoundException{
+		BinarySearch binarySearch = new BinarySearch();
+		String inputAdressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/input10000.txt";
+		Scanner inputFile = new Scanner(new FileReader(inputAdressFile));
+		getHowManyElementsOnTheInputsFile();
+		int[] arrayOfInputs = new int[sizeOfTheArrayOfInputs];
+		for(int iteratorNumber = 0; iteratorNumber < sizeOfTheArrayOfInputs; iteratorNumber++){
+			arrayOfInputs[iteratorNumber] = inputFile.nextInt();
+		}
+	
+		String keyAddressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/keys.txt";
+		Scanner inputKeyFile = new Scanner(new FileReader(keyAddressFile));
+		getHowManyElementsOnTheKeysFile();
+		arrayOfKeys = new int[sizeOfTheArrayOfKeys];
+		for(int iteratorNumber = 0; iteratorNumber < sizeOfTheArrayOfKeys; iteratorNumber++){
+			arrayOfKeys[iteratorNumber] = inputKeyFile.nextInt();
+		}
+		
+		binarySearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[0]);
+		binarySearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[1]);
+		binarySearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[2]);
+		binarySearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[3]);
+		binarySearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[4]);
+		binarySearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[5]);
+		binarySearch.lookForTheNumber(arrayOfInputs, sizeOfTheArrayOfInputs, arrayOfKeys[6]);
+	}
+
+	static int sizeOfTheArrayOfInputs = 0;
+	static int sizeOfTheArrayOfKeys = 0;
+	
+	
+	private static int getHowManyElementsOnTheInputsFile() throws FileNotFoundException{
+		String inputAdressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/input100.txt";
+		Scanner inputFile = new Scanner(new FileReader(inputAdressFile));
+		while(inputFile.hasNextInt()){
+			sizeOfTheArrayOfInputs++;
+			inputFile.nextInt();
+		}
+		inputFile.close();
+		return sizeOfTheArrayOfInputs;
+	}
+	
+	private static int getHowManyElementsOnTheKeysFile() throws FileNotFoundException{
+		String keyAddressFile = "/Users/educastro/Documents/programming/java/workspace/CS303/lab01/src/keys.txt";
+		Scanner inputKeyFile = new Scanner(new FileReader(keyAddressFile));
+		while(inputKeyFile.hasNextInt()){
+			sizeOfTheArrayOfKeys++;
+			inputKeyFile.nextInt();
+		}
+		inputKeyFile.close();
+		return sizeOfTheArrayOfKeys;
+	}
+}
+
+

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="LinearSearchTest" project="lab01" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="lab01.LinearSearchTest" time="0.0">
-    <testcase name="testSizeOfTheArrayOfKeys" classname="lab01.LinearSearchTest" time="0.0"/>
-    <testcase name="testArrayWithAllTheInputsOfTheFile" classname="lab01.LinearSearchTest" time="0.0"/>
-    <testcase name="testSizeOfTheArrayOfInputs" classname="lab01.LinearSearchTest" time="0.0"/>
-    <testcase name="testFirstElementOfTheInputFile" classname="lab01.LinearSearchTest" time="0.0"/>
-    <testcase name="testFirstElementOfTheKeysFile" classname="lab01.LinearSearchTest" time="0.0"/>
-  </testsuite>
-</testrun>
