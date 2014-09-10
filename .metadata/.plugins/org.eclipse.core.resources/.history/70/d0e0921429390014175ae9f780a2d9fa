@@ -1,0 +1,121 @@
+package lab03;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class MergeSort {
+	
+	int[] arrayOfInputs;
+	int[] tempArray;
+	
+	public int[] sort(String inputAddressFile) throws FileNotFoundException{
+		Scanner inputFile = new Scanner(new FileReader(inputAddressFile));
+		
+		// Calls the function to discover how many elements are in the file of inputs
+		int sizeOfTheArrayOfInputs = getHowManyElementsOnTheInputsFile(inputAddressFile);
+				
+		// Creates an array with the right size and inserts all the elements from the file into the array of inputs
+		arrayOfInputs = new int[sizeOfTheArrayOfInputs];
+		for(int iteratorNumber = 0; iteratorNumber < sizeOfTheArrayOfInputs; iteratorNumber++){
+			arrayOfInputs[iteratorNumber] = inputFile.nextInt();
+		}
+		
+		int initialPosition = 0;
+		int endPosition = sizeOfTheArrayOfInputs - 1;
+		tempArray = new int[sizeOfTheArrayOfInputs];
+		
+		// Close the Scanner instance
+		inputFile.close();
+		
+		mergeSort(arrayOfInputs, tempArray, initialPosition, endPosition);
+		return arrayOfInputs;
+	}
+	
+	public void mergeSort(int[] A, int[] temp, int p, int r){
+		System.out.println(temp[0]);
+		if(p < r){
+			int q = (p+r)/2;
+			mergeSort(A, temp, p, q);
+			mergeSort(A, temp, q + 1, r);
+			merge(A, temp, p, q, r);
+		}
+	}
+	
+	public void merge(int[] A, int[] temp, int p, int q, int r){
+		// merge A[p..q] with A[q+1..r]
+		int i = p;
+		int j = q + 1;
+		
+		// copy A[p..r] to temp[p..r]
+		for(int k = p; k < r; k++){
+			temp[k] = A[k];
+		}
+		
+		// merge back to A[p..r]
+		for(int k = p; k < r; k++){
+			if(i > q){
+				A[k] = temp[j];
+				j = j + 1;
+			}
+			
+			else if(j > r){
+				A[k] = temp[i]; 
+				i = i + 1;
+			}
+			
+			else if(temp[j] < temp[i]){
+				A[k] = temp[j]; 
+				j = j + 1;  
+			}
+			
+			else{
+				A[k] = temp[i];
+				i = i + 1;
+			}
+		}
+		
+	}
+	
+	public static boolean sortCheckAsc(int[] a) {
+        int  N = a.length;
+        int prev = a[0];
+        boolean isSorted = true;
+        for(int i=1; i< N; i++){
+            if(a[i] >= prev) {
+                continue;
+            }
+            else {
+                isSorted = false;
+                return isSorted;
+            }
+        }
+        return isSorted;
+    }
+	
+	// Calculates how many elements there are at the inputs file
+			private static int getHowManyElementsOnTheInputsFile(String inputAddressFile) throws FileNotFoundException{
+				Scanner inputFile = new Scanner(new FileReader(inputAddressFile));
+				
+				// Variable that will be incremented for each element at the input file
+				int sizeOfTheArrayOfInputs = 0;
+				
+				/*
+				 *  Everytime that there is a next element then increment the sizeOfTheArrayOfInputs variable
+				 *  and goes to the next element
+				 */
+				while(inputFile.hasNextInt()){
+					sizeOfTheArrayOfInputs++;
+					inputFile.nextInt();
+				}
+				
+				// Close the Scanner instance
+				inputFile.close();
+				
+				// Return how many elements there are in the input file for the creation of the array
+				return sizeOfTheArrayOfInputs;
+			}
+}
+	
+
+
