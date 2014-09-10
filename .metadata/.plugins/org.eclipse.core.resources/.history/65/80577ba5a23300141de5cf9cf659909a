@@ -1,0 +1,45 @@
+package lab02;
+
+public class InsertionSort {
+
+	public void sortAnArray(int[] arrayOfNumbers){
+		int[] dataSetOne = new int[6];
+		int[] dataSetTwo = new int[6];
+		int elementForDataSetTwo = 6;
+		
+		for(int iteratorNumber = 0; iteratorNumber < 6; iteratorNumber++){
+			dataSetOne[iteratorNumber] = iteratorNumber + 1;
+			dataSetTwo[iteratorNumber] = elementForDataSetTwo;
+			elementForDataSetTwo--;
+		}
+		
+		int key = 0;
+		int j = 1;
+		int i = 0;
+		int numberOfExecutions = 0;
+		for(j = 1; j < 6; j++){
+			key = dataSetOne[j];
+			i = j - 1;
+			while((i > 0) && (dataSetOne[i] > key)){
+				dataSetOne[i+1] = dataSetOne[i];
+				i = i - 1;
+				numberOfExecutions++;
+			}
+			dataSetOne[i+1] = key;
+		}
+		
+		System.out.println(dataSetOne[0]);
+		System.out.println(dataSetOne[1]);
+		System.out.println(dataSetOne[2]);
+		System.out.println(dataSetOne[3]);
+		System.out.println(dataSetOne[4]);
+		System.out.println(dataSetOne[5]);
+		System.out.println("number of executions of the inside loop: " + numberOfExecutions);
+		
+		/*
+		 *  For the first data set the inside while loop is executed 0 times and for the
+		 *  second data set the inside while loop is executed 10 times because it needs to
+		 *  rearrange all the elements of the array
+		 */
+	}
+}

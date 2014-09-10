@@ -1,0 +1,24 @@
+package lab02;
+
+public class InsertionSort {
+
+	public static void main(String[] args) {
+		int[] dataSetOne = new int[6];
+		int[] dataSetTwo = new int[6];
+		int elementForDataSetTwo = 6;
+		
+		for(int iteratorNumber = 0; iteratorNumber < 6; iteratorNumber++){
+			dataSetOne[iteratorNumber] = iteratorNumber + 1;
+			dataSetTwo[iteratorNumber] = elementForDataSetTwo;
+			elementForDataSetTwo--;
+		}
+		
+		
+		
+		System.out.println(dataSetOne[5]);
+		System.out.println(dataSetTwo[5]);
+		
+
+	}
+
+}
