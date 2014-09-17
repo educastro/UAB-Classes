@@ -1,0 +1,41 @@
+package lab04;
+
+public class HeapSortTest {
+
+	public static void main(String[] args) {
+		// Gets the input file address and stores into a Scanner instance. Each position is one file.
+		String[] inputAddressFile = new String[31];
+		inputAddressFile[0] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_16.txt";
+		inputAddressFile[1] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_32.txt";
+		inputAddressFile[2] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_64.txt";
+		inputAddressFile[3] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_128.txt";
+		inputAddressFile[4] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_256.txt";
+		inputAddressFile[5] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_512.txt";
+		inputAddressFile[6] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_1024.txt";
+		inputAddressFile[7] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2048.txt";
+		inputAddressFile[8] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_4096.txt";
+		inputAddressFile[9] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_8192.txt";
+		inputAddressFile[10] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_4.txt";
+		inputAddressFile[11] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_5.txt";
+		inputAddressFile[12] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_6.txt";
+		inputAddressFile[13] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_7.txt";
+		inputAddressFile[14] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_8.txt";
+		inputAddressFile[15] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_9.txt";
+		inputAddressFile[16] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_10.txt";
+		inputAddressFile[17] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_11.txt";
+		inputAddressFile[18] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_12.txt";
+		inputAddressFile[19] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_13.txt";
+		inputAddressFile[20] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_14.txt";
+		inputAddressFile[21] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_15.txt";
+		inputAddressFile[22] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_16.txt";
+		inputAddressFile[23] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_17.txt";
+		inputAddressFile[24] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_18.txt";
+		inputAddressFile[25] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_19.txt";
+		inputAddressFile[26] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_20.txt";
+		inputAddressFile[27] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_21.txt";
+		inputAddressFile[28] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_22.txt";
+		inputAddressFile[29] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_23.txt";
+		inputAddressFile[30] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_24.txt";
+	}
+
+}

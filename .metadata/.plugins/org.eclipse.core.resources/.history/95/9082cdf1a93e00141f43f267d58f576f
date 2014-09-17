@@ -1,0 +1,55 @@
+package lab04;
+
+public class HeapSort {
+	
+	private static int heapSize;
+	
+	public void heapSort(int[] A){
+		buildMaxHeap(A);
+		for(int i = A.length; i > 1; i--){
+			swap(A, 0, i);
+			heapSize = heapSize - 1;
+			maxHeapify(A, 1);
+		}
+	}
+	
+	public void buildMaxHeap(int[] A){
+		heapSize = A.length;
+		for(int i = (A.length/2); i > 0; i--){
+			maxHeapify(A, i);
+		}
+	}
+	
+	public void maxHeapify(int[] A, int i){
+		int left = left(i);
+		int right = right(i);
+		int largest;
+		if((left <= heapSize) && (A[left] > A[i])){
+			largest = left;
+		} else{
+			largest = i;
+		}
+		if((right <= heapSize) && (A[right] > A[largest])){
+			largest = right;
+		}
+		if(largest != i){
+			swap(A, i, largest);
+			maxHeapify(A, largest);
+		}
+	}
+	
+	public void swap(int[] A, int firstElement, int secondElement){
+		int tempNumber = A[firstElement];
+		A[firstElement] = A[secondElement];
+		A[secondElement] = tempNumber;
+	}
+	
+	public int left(int i){
+		return 2*i + 1;
+	}
+	
+	public int right(int i){
+		return 2*i + 2;
+	}
+
+}
