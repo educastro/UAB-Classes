@@ -8,54 +8,96 @@ public class MergeSortTest {
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		// Gets the input file address and stores into a Scanner instance. Each position is one file.
-		String[] inputAddressFile = new String[10];
-		inputAddressFile[0] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_16.txt";
-		inputAddressFile[1] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_32.txt";
-		inputAddressFile[2] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_64.txt";
-		inputAddressFile[3] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_128.txt";
-		inputAddressFile[4] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_256.txt";
-		inputAddressFile[5] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_512.txt";
-		inputAddressFile[6] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_1024.txt";
-		inputAddressFile[7] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2048.txt";
-		inputAddressFile[8] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_4096.txt";
-		inputAddressFile[9] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_8192.txt";
-		
-		// Execute the algorithm for each input file and returns if the sort is right or not for each one of them
-		for(int iteratorInputAddress = 0; iteratorInputAddress < 10; iteratorInputAddress++){
-			Scanner inputFile = new Scanner(new FileReader(inputAddressFile[iteratorInputAddress]));
+			// Gets the input file address and stores into a Scanner instance. Each position is one file.
+			String[] inputAddressFile = new String[31];
+			inputAddressFile[0] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_16.txt";
+			inputAddressFile[1] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_32.txt";
+			inputAddressFile[2] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_64.txt";
+			inputAddressFile[3] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_128.txt";
+			inputAddressFile[4] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_256.txt";
+			inputAddressFile[5] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_512.txt";
+			inputAddressFile[6] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_1024.txt";
+			inputAddressFile[7] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2048.txt";
+			inputAddressFile[8] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_4096.txt";
+			inputAddressFile[9] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_8192.txt";
+			inputAddressFile[10] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_4.txt";
+			inputAddressFile[11] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_5.txt";
+			inputAddressFile[12] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_6.txt";
+			inputAddressFile[13] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_7.txt";
+			inputAddressFile[14] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_8.txt";
+			inputAddressFile[15] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_9.txt";
+			inputAddressFile[16] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_10.txt";
+			inputAddressFile[17] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_11.txt";
+			inputAddressFile[18] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_12.txt";
+			inputAddressFile[19] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_13.txt";
+			inputAddressFile[20] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_14.txt";
+			inputAddressFile[21] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_15.txt";
+			inputAddressFile[22] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_16.txt";
+			inputAddressFile[23] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_17.txt";
+			inputAddressFile[24] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_18.txt";
+			inputAddressFile[25] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_19.txt";
+			inputAddressFile[26] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_20.txt";
+			inputAddressFile[27] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_21.txt";
+			inputAddressFile[28] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_22.txt";
+			inputAddressFile[29] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_23.txt";
+			inputAddressFile[30] = "/Users/educastro/Documents/programming/java/workspace/CS303/lab03/src/lab03/input_2_24.txt";
 			
-			// Calls the function to discover how many elements are in the file of inputs
-			int sizeOfTheArrayOfInputs = getHowManyElementsOnTheInputsFile(inputAddressFile[iteratorInputAddress]);
-					
-			/*
-			 *  Creates an array with the right size and inserts all the elements
-			 *  from the file into the array of inputs and temp array 
-			 */
-			int[] arrayOfInputs = new int[sizeOfTheArrayOfInputs];
-			int[] tempArray = new int[sizeOfTheArrayOfInputs];
 
-			for(int iteratorNumber = 0; iteratorNumber < sizeOfTheArrayOfInputs; iteratorNumber++){
-				int tempNumber = inputFile.nextInt();
-				arrayOfInputs[iteratorNumber] = tempNumber;
-				tempArray[iteratorNumber] = tempNumber;
+			
+			// Execute the algorithm for each input file and returns if the sort is right or not for each one of them
+			for(int iteratorInputAddress = 0; iteratorInputAddress < 31; iteratorInputAddress++){
+				Scanner inputFile = new Scanner(new FileReader(inputAddressFile[iteratorInputAddress]));
 				
+				// Calls the function to discover how many elements are in the file of inputs
+				int sizeOfTheArrayOfInputs = getHowManyElementsOnTheInputsFile(inputAddressFile[iteratorInputAddress]);
+						
+				/*
+				 *  Creates an array with the right size and inserts all the elements
+				 *  from the file into the array of inputs and temp array 
+				 */
+				int[] arrayOfInputs = new int[sizeOfTheArrayOfInputs];
+				int[] tempArray = new int[sizeOfTheArrayOfInputs];
+	
+				for(int iteratorNumber = 0; iteratorNumber < sizeOfTheArrayOfInputs; iteratorNumber++){
+					int tempNumber = inputFile.nextInt();
+					arrayOfInputs[iteratorNumber] = tempNumber;
+					tempArray[iteratorNumber] = tempNumber;
+					
+				}
+				
+				// Sets the initial position and the last position
+				int initialPosition = 0;
+				int lastPosition = sizeOfTheArrayOfInputs - 1;
+				
+				// Close the Scanner instance
+				inputFile.close();
+				
+				// Creates an InsertionSort instance and calls the sortAnArray method
+				MergeSort insertionSort = new MergeSort();
+				// Stores the current time of the computer system
+				long startTime = System.nanoTime();
+				
+				insertionSort.mergeSort(arrayOfInputs, tempArray, initialPosition, lastPosition, sizeOfTheArrayOfInputs);
+				
+				// Stores the current time of the computer system
+				long stopTime = System.nanoTime();
+
+				// Calculates the elapsed time using the time stores at the beggining and at the end of this execution
+				long elapsedTime = stopTime - startTime;
+
+				if(sortCheckAsc(arrayOfInputs)){
+					System.out.println("It's sorted. The elapsed time for file #" + (iteratorInputAddress + 1) + " is: " + elapsedTime);
+				}
+				else{	
+					System.out.println("It's not sorted.");
+				}
+				
+				System.out.println("--------");
+
 			}
 			
-			// Sets the initial position and the last position
-			int initialPosition = 0;
-			int lastPosition = sizeOfTheArrayOfInputs - 1;
-			
-			// Close the Scanner instance
-			inputFile.close();
-			
-			// Creates an InsertionSort instance and calls the sortAnArray method
-			MergeSort insertionSort = new MergeSort();
-			insertionSort.mergeSort(arrayOfInputs, tempArray, initialPosition, lastPosition);
-			
-			// For each call that the algorithm made it prints if the sorting was right or wrong
-			System.out.println("Sort from input file number #" + iteratorInputAddress + ": " + sortCheckAsc(arrayOfInputs));
-		}
+			System.out.println("End");
+		
 	}
 	
 	// Calculates how many elements there are at the inputs file

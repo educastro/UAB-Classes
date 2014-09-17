@@ -1,12 +1,18 @@
 package lab03;
 
+import java.io.FileNotFoundException;
+
 public class MergeSort {
 		
-	public void mergeSort(int[] A, int[] temp, int p, int r){
+	public void mergeSort(int[] A, int[] temp, int p, int r, int sizeOfTheArrayOfInputs) throws FileNotFoundException{
+		if(sizeOfTheArrayOfInputs < 512){
+			insertionSort(A, sizeOfTheArrayOfInputs);
+			return;
+		}
 		if(p < r){
 			int q = (p+r)/2;
-			mergeSort(A, temp, p, q);
-			mergeSort(A, temp, q + 1, r);
+			mergeSort(A, temp, p, q, sizeOfTheArrayOfInputs);
+			mergeSort(A, temp, q + 1, r, sizeOfTheArrayOfInputs);
 			merge(A, temp, p, q, r);
 		}
 	}
@@ -45,5 +51,24 @@ public class MergeSort {
 		}
 		
 	}
+	
+	public void insertionSort(int[] A, int sizeOfTheArrayOfInputs) throws FileNotFoundException{
+		
+		int key = 0;
+		int j = 1;
+		int i = 0;
+
+		for(j = 1; j < sizeOfTheArrayOfInputs ; j++){
+			key = A[j];
+			 for(i = j - 1; ((i >= 0) && (A[i] > key)); i--) 
+	          {
+				 A[i+1] = A[i];
+	          }
+			 A[i+1] = key;
+		}
+		
+		
+	}
+
 	
 }
