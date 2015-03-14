@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;v&apos; in &apos;lab14.Dijkstra.Dijkstra(...)&apos; to &apos;v1&apos;&#x0A;- Original project: &apos;lab14&apos;&#x0A;- Original element: &apos;lab14.Dijkstra.Dijkstra(Graph, int).v&apos;&#x0A;- Renamed element: &apos;v&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;v&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;lab14{Dijkstra.java[Dijkstra~Dijkstra~QGraph;~I@v!499!504!504!504!QEdge;!0!false" name="v1" references="true" stamp="1417639848029" version="1.0"/>
+</session>

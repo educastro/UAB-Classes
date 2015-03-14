@@ -1,7 +1,0 @@
-15 is not in the list
-55 is not in the list
-900 is not in the list
-987 is in the list
-1 is in the list
-25 is not in the list
-566 is in the list

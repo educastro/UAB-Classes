@@ -1,0 +1,76 @@
+/**
+ * 
+ */
+package decorator;
+
+import java.io.IOException;
+import java.io.Writer;
+
+import strategy.Cipher;
+
+
+public class EncryptingWriter extends WriterDecorator {
+	//the writer property
+	Writer writer;
+	//the reader property
+	Cipher cipher;
+
+	/**
+	 * Construct an encrypting writer that decorates a given writer
+	 * 
+	 * @param writer
+	 *            the writer to decorate
+	 */
+	public EncryptingWriter(Writer writer, Cipher cipher) {
+		//set the writer property
+		this.writer = writer;
+		//set the cipher property
+		this.cipher = cipher;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see edu.uab.decorator.WriterDecorator#write(char[], int, int)
+	 */
+	@Override
+	public void write(char[] cbuf, int off, int len) throws IOException {
+		//encrypt the buffer
+		cipher.encrypt(cbuf);
+		//write the buffer
+		writer.write(cbuf, off, len);
+		//Finally...done.
+	}
+	
+	@Override
+	public void write(char[] cbuf) throws IOException {
+		//encrypt the buffer
+		cipher.encrypt(cbuf);
+		//write the buffer
+		writer.write(cbuf);
+		//Finally...done.
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see edu.uab.decorator.WriterDecorator#flush()
+	 */
+	@Override
+	public void flush() throws IOException {
+		//flush the writer
+		writer.flush();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see edu.uab.decorator.WriterDecorator#close()
+	 */
+	@Override
+	public void close() throws IOException {
+		//close the writer
+		writer.close();
+	}
+
+}

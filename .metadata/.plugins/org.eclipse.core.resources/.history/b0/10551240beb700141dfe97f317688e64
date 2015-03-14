@@ -1,0 +1,49 @@
+
+/**
+ * 
+ */
+package client;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import decorator.DecryptingReader;
+import decorator.EncryptingWriter;
+import strategy.CeasarCipher;
+import strategy.Cipher;
+
+
+public class AppMain {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws IOException {
+		//create the message to encrypt
+		String message = "  How about now? Can you understand Me? You should!!!";
+		
+		char[] charToBeEncripted = message.toCharArray();
+		
+		//create a cipher to use
+		Cipher cipher = new NewCeasarCipher();
+		
+	    EncryptingWriter e = new EncryptingWriter(new FileWriter("test.out"), cipher);
+		e.write(message);//write the message
+		e.write("\n----- alphabet example : abcdefghijklmnopqrstuvwxyz!?.()ABCDEFGHIJKLMNOPQRSTUVWXYZ1ABCDEFGHIJKLMNOPQRSTUVWXYZ-------   ");//write the alphabet example	
+		e.flush();//flush the writer
+		e.close();//close the writer
+		
+		
+		//read the message from the file
+	    DecryptingReader r = new DecryptingReader(new FileReader("test.out"),cipher);//decorate the FileReader with the DecryptingReader
+		char[] readBuffer = new char[1];//setup the character read buffer
+		while(r.read(readBuffer) > 0){//while there are characters left to read, read the character
+			System.out.print(readBuffer);//write the read character to the screen
+		}
+		r.close();//close the reader
+		
+	}
+}
