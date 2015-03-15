@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;in&apos; in &apos;lab12.DepthFirstPathsTest.main(...)&apos; to &apos;input&apos;&#x0A;- Original project: &apos;lab12&apos;&#x0A;- Original element: &apos;lab12.DepthFirstPathsTest.main(String[]).in&apos;&#x0A;- Renamed element: &apos;in&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;in&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;lab12{DepthFirstPathsTest.java[DepthFirstPathsTest~main~\[QString;@in!186!330!201!202!QBufferedReader;!0!false" name="input" references="true" stamp="1415825980284" version="1.0"/>
-</session>

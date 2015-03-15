@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move 3 elements to &apos;ObjectOrientedDesign/src/lab01&apos;&#x0A;- Original project: &apos;Lab1&apos;&#x0A;- Destination element: &apos;ObjectOrientedDesign/src/lab01&apos;&#x0A;- Original elements:&#x0A;     ComplexTester.java&#x0A;     Complex.java&#x0A;     Library.java&#x0A;- Update references to refactored element" description="Move compilation units" destination="=ObjectOrientedDesign/src&lt;lab01" element1="/src&lt;{ComplexTester.java" element2="/src&lt;{Complex.java" element3="/src&lt;{Library.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1421268070717" units="3" version="1.0"/>
-</session>

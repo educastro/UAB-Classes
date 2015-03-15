@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;charOfLetters&apos; in &apos;GiftSorter.sortGiftCode(...)&apos; to &apos;arrayOfLetters&apos;&#x0A;- Original project: &apos;CodeWars&apos;&#x0A;- Original element: &apos;GiftSorter.sortGiftCode(String).charOfLetters&apos;&#x0A;- Renamed element: &apos;charOfLetters&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;charOfLetters&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{GiftSorter.java[GiftSorter~sortGiftCode~QString;@charOfLetters!78!117!87!99!\[QString;!0!false" name="arrayOfLetters" references="true" stamp="1414740910016" version="1.0"/>
-</session>
