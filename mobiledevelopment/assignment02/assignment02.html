@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Assignment 02</title>
+		<meta charset="UTF-8">
+          <script src="js/assignment02.js" type="text/javascript"></script>
+          <link rel = "stylesheet" type = "text/css" href = "styles/assignment02.css" />
+	</head>
+
+	<body>
+		<form id="personalInformation">			
+			<div id="inputs">
+				<h3>Salutation Information</h3>
+
+                    <p>
+					<input type="radio" id="salutation" value="Mr.">Mr.   
+                         <input type="radio" id="salutation" value="Ms.">Ms.
+                         <input type="radio" id="salutation" value="Ms.">Dr.
+				</p>
+
+                    <h3>Personal Information</h3>
+
+				<p>
+                         First Name: 
+					     <input type="text" id="firstName">
+                         Last Name: 
+                              <input type="text" id="lastName">
+                    </p>
+
+                    <h3>Address Information</h3>
+
+                    <p>
+                         </br>
+                         Street Address: 
+                              <input type="text" id="streetAddress">
+                         City: 
+                              <input type="text" id="city">
+                         State: 
+                              <input type="text" id="state"> 
+                         ZIP Code: 
+                              <input type="text" id="zipCode"> 
+                    </p>
+
+                    <h3>Payment Information</h3>
+                    <p>
+                         Hourly pay rate: 
+                              <input type="number" id="hourlyPayRate">
+                         Worked hours during the week:
+                              <input type="number" id="workedHoursDuringWeek">
+                    </p>
+               </div>
+               
+               <div id="buttonDiv">
+                    <input type="button" id="button" value="Submit" onclick="calculatePayAmount()" />        
+			</div>
+
+               <div id="outputPersonalInformation"></div>
+               <div id="outputPayment"></div>
+		</form>
+
+          <footer>
+               Made By
+               <br>
+               Eduardo de Oliveira Castro
+               <br>
+               eduardocastro91@gmail.com
+               <br>
+               edc@uab.edu
+               <br>
+     </footer>
+	</body>
+</html>

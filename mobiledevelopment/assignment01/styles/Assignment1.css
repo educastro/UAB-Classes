@@ -1,0 +1,41 @@
+h1 {
+	text-align: center; 
+	font-family: sans-serif;
+}
+
+h2 {
+	text-align: center; 
+	font-family: sans-serif;
+}
+
+#tardis {
+	width: 25%;
+	text-align: right;
+	padding: 5px;
+}
+
+#tardisDiv {
+	text-align: right;
+}
+
+.section1 {
+	background-color: #B28337;
+}
+
+.section2 {
+	background-color: #0688FF;
+}
+
+.section2 h2, ol {
+	color: #FFE849;
+}
+
+footer {
+	font-family: sans-serif;
+	text-align: center; 
+	background-color: red;
+}
+
+table, th, td {
+   border: 1px solid black;
+}

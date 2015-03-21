@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Assignment 03</title>
+		<meta charset="UTF-8">
+          <script src="js/assignment03.js" type="text/javascript"></script>
+          <link rel = "stylesheet" type = "text/css" href = "styles/assignment03.css" />
+	</head>
+
+	<body>
+		<form id="inputForm">			
+			<div id="inputs">
+				<h3>Meeting Planner</h3>
+
+				<p>
+                         Initial Meeting Date:
+					     <input type="text" id="initialMeetingDate">
+                    </p>
+
+                    <p>
+                         Number of Days Between Meetings: 
+                              <input type="number" id="numberOfDaysBetweenMeetings">
+                    </p>
+
+                    <p>
+                         Number of meetings to follow:
+                              <input type="number" id="numberOfFollowingMeetings">
+                    </p>
+               </div>
+               
+               <div id="buttonDiv">
+                    <input type="button" id="button" value="Submit" onclick="calculateNextDay()" />        
+			</div>
+
+               <div id="outputTableWithDates">
+
+               </div>
+		</form>
+
+          <footer>
+               <br>
+               Made By
+               <br>
+               Eduardo de Oliveira Castro
+               <br>
+               eduardocastro91@gmail.com
+               <br>
+               edc@uab.edu
+               <br>
+     </footer>
+	</body>
+</html>

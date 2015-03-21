@@ -1,0 +1,48 @@
+    <!DOCTYPE html>
+
+    <html>
+        
+        <head>
+            <script src="js/exam01.js" type="text/javascript"></script>
+            <link rel = "stylesheet" type = "text/css" href = "styles/exam1.css" />
+            <title>Exam 01</title>
+        </head>
+
+        <body>
+
+            <form id="loanInformation">
+                <h3>Payment Information</h3>
+                    <p>
+                        Loan amount: 
+                        <input type="number" id="loanAmount">
+                        <br>
+                        Yearly loan interest rate(%):
+                        <input type="number" id="yearlyLoanInterestRate"> 
+                        <br>
+                        Term of the loan in years:
+                        <input type="number" id="termOfTheLoanInYears"> 
+                    </p>
+
+                 <div id="submitButton">
+                    <input type="button" id="button" value="Submit" onclick="calculateLoan()" />        
+                </div>   
+
+                 <div id="outputTable"></div>
+
+            </form>
+
+            <footer>
+                    <br>
+                    Made By
+                    <br>
+                    Eduardo de Oliveira Castro
+                    <br>
+                    eduardocastro91@gmail.com
+                    <br>
+                    edc@uab.edu
+                    <br>
+            </footer>
+
+        </body>
+
+    </html>
